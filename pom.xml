@@ -70,6 +70,7 @@
 
 	<modules>
 		<module>design-patterns</module>
+		<module>skeleton</module>
 	</modules>
 
 	<licenses>
