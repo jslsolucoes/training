@@ -1,0 +1,130 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.jslsolucoes</groupId>
+	<artifactId>training</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<java.source.version>1.8</java.source.version>
+		<java.target.version>1.8</java.target.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.scm.id>github</project.scm.id>
+	</properties>
+
+	<organization>
+		<name>JSL Solucoes</name>
+		<url>https://jslsolucoes.com</url>
+	</organization>
+
+
+
+	<developers>
+		<developer>
+			<id>jlemes</id>
+			<name>Jonatan de Sá Lemes</name>
+			<email>jonatan@jslsolucoes.com</email>
+			<organization>JSL Solucoes LTDA</organization>
+			<organizationUrl>http://jslsolucoes.com</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>-3</timezone>
+		</developer>
+	</developers>
+
+	<dependencies>
+		<dependency>
+			<groupId>jakarta.platform</groupId>
+			<artifactId>jakarta.jakartaee-api</artifactId>
+			<version>8.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.6.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.6.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<version>1.6.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>3.3.3</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<modules>
+		<module>design-patterns</module>
+	</modules>
+
+	<licenses>
+		<license>
+			<distribution>repo</distribution>
+			<name>Apache License, Version 2.0</name>
+			<url>http://apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/jslsolucoes/training</url>
+		<connection>scm:git:https://github.com/jslsolucoes/training</connection>
+		<developerConnection>scm:git:https://github.com/jslsolucoes/training</developerConnection>
+	</scm>
+
+	<repositories>
+		<repository>
+			<id>oss-sonatype-snapshot</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>oss-sonatype-release</id>
+			<url>https://oss.sonatype.org/content/repositories/releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>${java.source.version}</source>
+					<target>${java.target.version}</target>
+					<compilerArgs>
+						<arg>-Xlint</arg>
+						<arg>-parameters</arg>
+					</compilerArgs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
