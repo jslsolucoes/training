@@ -10,8 +10,9 @@ import com.google.common.collect.Lists;
 public class PromoCodeManager {
 
     private List<PromoCode> promoCodes = Lists.newArrayList();
-    
-    public PromoCode createNewPromoCode(String code,BigDecimal off) {
+  
+
+    public PromoCode createNewPromoCode(String code, BigDecimal off) {
 	PromoCode promoCode = new PromoCode(code, LocalDate.now().plusDays(3), off);
 	promoCodes.add(promoCode);
 	return promoCode;
