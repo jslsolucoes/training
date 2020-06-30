@@ -75,6 +75,7 @@
 
 	<modules>
 		<module>design-patterns</module>
+		<module>design-systems</module>
 		<module>skeleton</module>
 	</modules>
 
