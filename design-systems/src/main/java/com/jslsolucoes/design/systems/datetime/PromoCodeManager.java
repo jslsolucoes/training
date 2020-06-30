@@ -19,7 +19,7 @@ public class PromoCodeManager {
     }
 
     public PromoCode applyPromoCode(String code) throws PromoCodeManagerException {
-	PromoCode promoCode = findFor(code)
+	PromoCode promoCode = findPromoCodeByCode(code)
 		.orElseThrow(() -> new PromoCodeManagerException("Cant find any promo code with value " + code));
 	if (promoCode.getExpires().isBefore(LocalDate.now())) {
 	    throw new PromoCodeManagerException("You have an expired promo code.");
@@ -27,7 +27,7 @@ public class PromoCodeManager {
 	return promoCode;
     }
 
-    private Optional<PromoCode> findFor(String code) {
+    private Optional<PromoCode> findPromoCodeByCode(String code) {
 	return promoCodes.stream().filter(promoCode -> code.equals(promoCode.getCode())).findAny();
     }
 }
